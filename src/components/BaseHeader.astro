@@ -8,7 +8,7 @@ import HeaderLink from "./HeaderLink.astro";
     <div>
       <a href="/">
         <span>LOGO</span>
-        <span>{SITE.title}</span>
+        <!-- <span>{SITE.title}</span> -->
       </a>
     </div>
     <div>
@@ -46,7 +46,7 @@ import HeaderLink from "./HeaderLink.astro";
 
   div {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     max-width: 100%;
     display: flex;
     flex-grow: 1;
@@ -59,7 +59,9 @@ import HeaderLink from "./HeaderLink.astro";
 
   nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: space-between;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
   }
 </style>
