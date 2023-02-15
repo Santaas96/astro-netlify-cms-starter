@@ -1,0 +1,65 @@
+---
+import { SITE } from "../config";
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<header class="wrapper">
+  <article>
+    <div>
+      <a href="/">
+        <span>LOGO</span>
+        <span>{SITE.title}</span>
+      </a>
+    </div>
+    <div>
+      <nav>
+        <div>
+          <HeaderLink href="/">Home</HeaderLink>
+          <HeaderLink href="/nosotros">Nosotros</HeaderLink>
+          <HeaderLink href="/servicios">Nuestros Servicios</HeaderLink>
+          <HeaderLink href="/blog">Blog</HeaderLink>
+          <HeaderLink href="/Contacto">Contacto</HeaderLink>
+        </div>
+				<div>
+					<HeaderLink href="#">GM</HeaderLink>
+          <HeaderLink href="#">WP</HeaderLink>
+          <HeaderLink href="#">TW</HeaderLink>
+          <HeaderLink href="#">IG</HeaderLink>
+          <HeaderLink href="#">FB</HeaderLink>
+				</div>
+      </nav>
+    </div>
+  </article>
+</header>
+
+<style>
+  header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 5rem;
+  }
+  article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  div {
+    margin: 0;
+    font-size: 1.5rem;
+    max-width: 100%;
+    display: flex;
+    flex-grow: 1;
+  }
+
+  div a {
+    text-decoration: none;
+    display: inline-flex;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+</style>

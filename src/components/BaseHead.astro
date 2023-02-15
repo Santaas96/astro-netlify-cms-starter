@@ -1,12 +1,13 @@
 ---
 import '../styles/blog.css';
+import { SITE } from '../config';
 
 export interface Props {
-	title: string;
-	description: string;
+	title?: string;
+	description?: string;
 	permalink: string;
 }
-const { title, description, permalink } = Astro.props;
+const { title= SITE.title, description= SITE.description, permalink } = Astro.props;
 ---
 
 <!-- Global Metadata -->

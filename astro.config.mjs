@@ -52,7 +52,7 @@ export default defineConfig({
               {
                 name: "layout",
                 widget: "hidden",
-                default: "../../layouts/BlogPost.astro",
+                default: "../../layouts/BlogPostLayout.astro",
               },
             ],
           },
