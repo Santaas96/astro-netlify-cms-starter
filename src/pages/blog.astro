@@ -24,13 +24,13 @@ allPosts = allPosts.sort(
 ---
 
 <MainLayout>
-  {console.log(allPosts)}
   <section class="intro">
     <h1 class="latest">{title}</h1>
     <p class="description">{description}</p>
   </section>
   <section aria-label="Blog post list">
     {allPosts.map((p) => <BlogPostPreview post={p} />)}
+    {console.log(allPosts)}
   </section>
 </MainLayout>
 
