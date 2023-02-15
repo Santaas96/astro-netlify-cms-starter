@@ -35,9 +35,9 @@ const { title, author, authorURL, publishDate, heroImage, description } = Astro.
 		width: 100vw;
 		object-fit: cover;
 		object-position: center;
-		margin-top: 2rem;
+		margin: 2rem auto 4rem auto;
 		margin-bottom: 4rem;
-		max-width: 720px;
+		max-width: auto;
 	}
 
 	@media (max-width: 50em) {
@@ -49,7 +49,7 @@ const { title, author, authorURL, publishDate, heroImage, description } = Astro.
 	}
 
 	.content {
-		margin-bottom: 8rem;
+		margin-bottom: 5rem;
 	}
 
 	.content :global(main > * + *) {
