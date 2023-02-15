@@ -20,7 +20,7 @@ export default defineConfig({
             name: "blog",
             label: "Blog Posts",
             label_singular: "Blog Post",
-            folder: "src/pages/blog",
+            folder: "src/pages/posts",
             create: true,
             delete: true,
             slug: "{{year}}-{{month}}-{{day}}-{{slug}}",
