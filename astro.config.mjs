@@ -25,12 +25,6 @@ export default defineConfig({
             delete: true,
             slug: "{{year}}-{{month}}-{{day}}-{{slug}}",
             fields: [
-              {
-                label: "Layout",
-                name: "layout",
-                widget: "hidden",
-                default: "blog",
-              },
               { label: "Title", name: "title", widget: "string" },
               { label: "Description", name: "description", widget: "string" },
               { label: "Featured Image", name: "thumbnail", widget: "image" },
@@ -57,11 +51,8 @@ export default defineConfig({
               { label: "Body", name: "body", widget: "markdown" },
               {
                 name: "layout",
-                widget: "select",
+                widget: "hidden",
                 default: "../../layouts/BlogPost.astro",
-                options: [
-                  { label: "Blog Post", value: "../../layouts/BlogPost.astro" },
-                ],
               },
             ],
           },
