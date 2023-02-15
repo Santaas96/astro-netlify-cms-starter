@@ -22,8 +22,9 @@ allPosts = allPosts.sort(
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
-{console.log(allPosts)}
+
 <MainLayout>
+  {console.log(allPosts)}
   <section class="intro">
     <h1 class="latest">{title}</h1>
     <p class="description">{description}</p>
