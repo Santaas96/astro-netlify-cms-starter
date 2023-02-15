@@ -8,27 +8,26 @@ import HeaderLink from "./HeaderLink.astro";
     <div>
       <a href="/">
         <span>LOGO</span>
-        <!-- <span>{SITE.title}</span> -->
+        <span>{SITE.title}</span>
       </a>
     </div>
-    <div>
-      <nav>
-        <div>
-          <HeaderLink href="/">Home</HeaderLink>
-          <HeaderLink href="/nosotros">Nosotros</HeaderLink>
-          <HeaderLink href="/servicios">Nuestros Servicios</HeaderLink>
-          <HeaderLink href="/blog">Blog</HeaderLink>
-          <HeaderLink href="/Contacto">Contacto</HeaderLink>
-        </div>
-				<div>
-					<HeaderLink href="#">GM</HeaderLink>
-          <HeaderLink href="#">WP</HeaderLink>
-          <HeaderLink href="#">TW</HeaderLink>
-          <HeaderLink href="#">IG</HeaderLink>
-          <HeaderLink href="#">FB</HeaderLink>
-				</div>
-      </nav>
-    </div>
+
+    <nav>
+      <div>
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/nosotros">Nosotros</HeaderLink>
+        <HeaderLink href="/servicios">Nuestros Servicios</HeaderLink>
+        <HeaderLink href="/blog">Blog</HeaderLink>
+        <HeaderLink href="/Contacto">Contacto</HeaderLink>
+      </div>
+      <div>
+        <HeaderLink href="#">GM</HeaderLink>
+        <HeaderLink href="#">WP</HeaderLink>
+        <HeaderLink href="#">TW</HeaderLink>
+        <HeaderLink href="#">IG</HeaderLink>
+        <HeaderLink href="#">FB</HeaderLink>
+      </div>
+    </nav>
   </article>
 </header>
 
@@ -63,5 +62,8 @@ import HeaderLink from "./HeaderLink.astro";
     justify-content: center;
     flex-direction: column;
     gap: 8px;
+  }
+  nav div {
+    gap: 6px;
   }
 </style>

@@ -1,4 +1,4 @@
 export const SITE = {
-  title: 'Astro Blog with Netlify CMS Template',
+  title: 'Astro Template',
   description: 'Descripcion del Template'
 };
