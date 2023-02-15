@@ -5,7 +5,7 @@ heroImage: https://images3.alphacoders.com/813/813087.jpg
 author: Santiaguito pa
 authorURL: https://github.com/Santaas96/astro-netlify-cms-starter
 publishDate: 15 Feb 2023
-layout: ../../layouts/BlogPost.astro
+layout: ../../layouts/BlogPostLayout.astro
 ---
 > *"Soy el mejor" ,* Cortes Santiago
 
