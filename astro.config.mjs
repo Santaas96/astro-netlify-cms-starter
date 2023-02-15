@@ -27,7 +27,7 @@ export default defineConfig({
             fields: [
               { label: "Title", name: "title", widget: "string" },
               { label: "Description", name: "description", widget: "string" },
-              { label: "Featured Image", name: "heroImage", widget: "image" },
+              { label: "Hero Image", name: "heroImage", widget: "image" },
               {
                 name: "author",
                 widget: "string",
