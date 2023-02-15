@@ -5,6 +5,7 @@ import NetlifyCMS from 'astro-netlify-cms';
 export default defineConfig({
   integrations: [
     NetlifyCMS({
+      adminPath: '/blog/admin',
       config: {
         // Use Netlify’s “Git Gateway” authentication and target our default branch
         backend: {
