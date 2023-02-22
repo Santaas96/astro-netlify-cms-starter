@@ -5,7 +5,8 @@ export function get(context) {
   const postImportResult = import.meta.glob('./blog/**/*.md', { eager: true }); 
   const posts = formatBlogPosts(Object.values(postImportResult));
   return rss({
-    title: 'my astro blog',
+    stylesheet: '/rss/styles.xsl',
+    title: 'Blog',
     description: 'A humble Astronaut’s guide to the stars',
     site: context.site,
     items: posts.map((post) => ({
