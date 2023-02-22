@@ -14,8 +14,7 @@ export function get(context) {
       title: post.frontmatter.title,
       description: post.frontmatter.description,
       pubDate: post.frontmatter.publishDate,
-      uuid: post.frontmatter.uuid,
-      customData: `<author>by ${post.frontmatter.author}</author>`,
+      customData: `<id>${post.frontmatter.uniqueId}</id>`,
     })),
   });
 }
