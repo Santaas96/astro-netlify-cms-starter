@@ -3,6 +3,7 @@
 import BlogPostPreview from "../components/BlogPostPreview.astro";
 import { SITE } from "../config";
 import MainLayout from "../layouts/MainLayout.astro";
+import moment from 'moment';
 
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
@@ -14,9 +15,13 @@ let { title, description } = SITE;
 
 let allPosts = await Astro.glob("./posts/*.md");
 allPosts = allPosts.sort(
-  (a, b) =>
-    new Date(b.frontmatter.publishDate).valueOf() -
-    new Date(a.frontmatter.publishDate).valueOf()
+  (a, b) =>{
+    if(moment(b.frontmatter.publishDate).isBefore(a.frontmatter.publishDate)){
+      return -1
+    }else {
+      return 1
+    }
+  }
 );
 
 // Full Astro Component Syntax:
@@ -30,7 +35,6 @@ allPosts = allPosts.sort(
   </section>
   <section aria-label="Blog post list">
     {allPosts.map((p) => <BlogPostPreview post={p} />)}
-    {console.log(allPosts.length)}
   </section>
 </MainLayout>
 

@@ -1,6 +1,6 @@
 ---
 import Author from './Author.astro';
-
+import { formatDate } from '../js/utils';
 export interface Props {
 	title: string;
 	author: string;
@@ -20,7 +20,7 @@ const { title, author, authorURL, publishDate, heroImage, description } = Astro.
 				<h1 class="title">{title}</h1>
 				<h3>{description}</h3>
 				<img width="720" height="420" class="hero-image" loading="lazy" src={heroImage} />
-				<p class="publish-date">{publishDate}</p>
+				<p class="publish-date">{formatDate(publishDate)}</p>
 				<Author name={author} href={authorURL} />
 			</header>
 			<main>

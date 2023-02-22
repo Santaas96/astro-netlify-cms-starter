@@ -1,6 +1,6 @@
 ---
 const { post } = Astro.props;
-
+import moment from 'moment';
 ---
 
 <article class="post-preview">
@@ -13,11 +13,10 @@ const { post } = Astro.props;
   />
   <div>
     <header>
-      <p class="publish-date">{post.frontmatter.publishDate}</p>
+      <p class="publish-date">{moment(post.frontmatter.publishDate).format("DD-MM-YYYY")}</p>
       <a href={post.url}><h1 class="title">{post.frontmatter.title}</h1></a>
     </header>
     <p>{post.frontmatter.description}</p>
-    <p>{post.frontmatter.uniqueId}</p>
     <a href={post.url}>Ver Mas</a>
   </div>
 </article>

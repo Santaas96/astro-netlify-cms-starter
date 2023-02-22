@@ -1,46 +1,55 @@
+import moment from 'moment';
+
 export function slugify(text) {
   return text
     .toString()
     .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w-]+/g, '')
-    .replace(/--+/g, '-')
-    .replace(/^-+/, '')
-    .replace(/-+$/, '');
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "")
+    .replace(/--+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");
 }
 
 export function formatDate(date) {
-  return new Date(date).toLocaleDateString('en-US', {
+  return new Date(date).toLocaleDateString("es-ES", {
     timeZone: "UTC",
-  })
+  });
 }
 
-export function formatBlogPosts(posts, {
-  // filterOutDrafts = true,
-  filterOutFuturePosts = true,
-  sortByDate = true,
-  limit = undefined,
-} = {}) {
-
+export function formatBlogPosts(
+  posts,
+  {
+    // filterOutDrafts = true,
+    filterOutFuturePosts = true,
+    sortByDate = true,
+    limit = undefined,
+  } = {}
+) {
   const filteredPosts = posts.reduce((acc, post) => {
-    const { publishDate, draft } = post.frontmatter;
-    // filterOutDrafts if true
-    // if (filterOutDrafts && draft) return acc;
+    const { publishDate } = post.frontmatter;
 
-    // filterOutFuturePosts if true
     if (filterOutFuturePosts && new Date(publishDate) > new Date()) return acc;
 
     // add post to acc
-    acc.push(post)
+    acc.push(post);
 
     return acc;
-  }, [])
+  }, []);
 
   // sortByDate or randomize
   if (sortByDate) {
-    filteredPosts.sort((a, b) => new Date(b.frontmatter.publishDate) - new Date(a.frontmatter.publishDate))
+    filteredPosts.sort((a, b) => {
+      if (
+        moment(b.frontmatter.publishDate).isBefore(a.frontmatter.publishDate)
+      ) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
   } else {
-    filteredPosts.sort(() => Math.random() - 0.5)
+    filteredPosts.sort(() => Math.random() - 0.5);
   }
 
   // limit if number is passed
@@ -48,5 +57,4 @@ export function formatBlogPosts(posts, {
     return filteredPosts.slice(0, limit);
   }
   return filteredPosts;
-
 }
