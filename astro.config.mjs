@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import NetlifyCMS from 'astro-netlify-cms';
+import { v4 as uuidv4 } from 'uuid';
 
 // https://astro.build/config
 import tailwind from "@astrojs/tailwind";
@@ -60,6 +61,11 @@ export default defineConfig({
           name: "body",
           widget: "markdown"
         }, {
+          name: "uuid",
+          widget: "hidden",
+          default: uuidv4()
+        }
+        , {
           name: "layout",
           widget: "hidden",
           default: "../../layouts/BlogPostLayout.astro"
