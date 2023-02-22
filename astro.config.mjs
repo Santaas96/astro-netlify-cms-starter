@@ -75,9 +75,8 @@ export default defineConfig({
                 widget: "markdown",
               },
               { 
-                label: "ID",
                 name: "uniqueId",
-                widget: "string",
+                widget: "hidden",
                 default: uuidv4(),
               },
               {

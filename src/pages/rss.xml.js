@@ -12,9 +12,8 @@ export function get(context) {
     items: posts.map((post) => ({
       link: post.url,
       title: post.frontmatter.title,
-      description: post.frontmatter.description,
+      description: post.frontmatter.uniqueId,
       pubDate: post.frontmatter.publishDate,
-      customData: `<id>${post.frontmatter.uniqueId}</id>`,
     })),
   });
 }

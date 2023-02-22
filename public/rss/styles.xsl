@@ -103,7 +103,6 @@ This file is in BETA. Please test and contribute to the discussion:
                 </a>
               </h3>
               <p><xsl:value-of select="description" /></p>
-              <small class="text-gray"><xsl:value-of select="id" /></small>
               <small class="text-gray">
                 Published: <xsl:value-of select="pubDate" />
               </small>
